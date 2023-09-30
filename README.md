@@ -207,7 +207,13 @@ We can output this changeset i.e. "plan" to be passed to be passed to an apply, 
 
 The `terraform apply` command is used to apply the changes defined in your Terraform configuration to your infrastructure. It will run a plan and pass the changeset to be executed by terraform. Apply should prompt yes or no.
 
-If we want to automatically approve an apply we can provide the auo approve flag e.g `terraform apply --aouto-approve`
+If we want to automatically approve a destroy we can provide the auto approve flag e.g `terraform apply --auto-approve`
+
+#### Terraform Destroy
+
+The `terraform destroy` command is used to destroy all resources managed by your Terraform configuration. It effectively tears down your infrastructure.
+
+If we want to automatically approve an apply we can provide the auto approve flag e.g `terraform destroy --auto-approve`
 
 
 #### Terraform Lock Files
