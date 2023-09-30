@@ -177,4 +177,63 @@ if it is successful you should see a json payload return that looks like this;
 
 We will need to generate AWS CLI credits from IAM User inorder to use the AWS CLI.
 
+## Terraform Basics
 
+### Terraform Registry
+
+Terraform sources their providers  and modules from Terraform registry which are locatedat [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** is an interface to APIs that will allow to create resources in Terraform. Providers are responsible for interacting with specific APIs or services of various cloud providers, infrastructure platforms, or external systems to create, update, and manage resources. In essence, they serve as the bridge between Terraform and the target infrastructure. In essence Terraform providers are like **connectors** that help Terraform talk to different cloud services and platforms.
+
+[Random terraform providers](https://registry.terraform.io/providers/hashicorp/random/latest)
+
+- **Modules** are a way to organize and reuse your infrastructure code in a structured and modular fashion, making it easier to manage and maintain complex infrastructure setups. In a way we can say Terraform modules are like pre-made customizable templates for building infrastructure, making it easier to create and manage different parts of your infrastructure without starting from scratch each time.
+
+### Terraform Console
+
+We can see a list if all the Terraform commands by typing `terraform`. 
+
+#### Terraform Init
+
+When you initialise/start a new project you run the `terraform init` command to download the binaries for the terraform providers that we will use in this project. The `terraform init` command ensures that your Terraform environment is set up correctly with the necessary plugins, modules, and backend configurations, so you can create, update, or manage your infrastructure as defined in your Terraform configuration files.
+
+#### Terraform Plan
+
+The `terraform plan` command is used to preview and assess the changes that Terraform will make to your infrastructure before actually applying those changes. Running this command allows us to review and verify what Terraform intends to do to our infrastructure without actually making any changes.
+
+We can output this changeset i.e. "plan" to be passed to be passed to an apply, but often you can just ignore outputting.
+
+#### Terraform Apply
+
+The `terraform apply` command is used to apply the changes defined in your Terraform configuration to your infrastructure. It will run a plan and pass the changeset to be executed by terraform. Apply should prompt yes or no.
+
+If we want to automatically approve an apply we can provide the auo approve flag e.g `terraform apply --aouto-approve`
+
+
+#### Terraform Lock Files
+
+`.terraform.lock.hcl`
+
+this file contains the locked versioning for the providers or modules that should be used with this project.
+
+The Terraform Lock File **should be commited** to your Version Control System (VSC) e.g Github
+
+
+#### Terraform State Files
+
+`terraform.tfstate`
+
+This file contains information about the current state of your infrastructure.
+
+This file **should not be committed** to your Version Control System (VSC) e.g Github.
+
+This file can contain sensitive data.
+
+If you loose this file, you lose knowing the state of your infrastructure.
+
+`.terraform.tfstate.backup` is the previous state file sate.
+
+
+##### Terraform Dirctory
+
+`.terraform` directory contains binaries of terraform providers.
