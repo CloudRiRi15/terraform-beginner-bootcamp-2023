@@ -1,0 +1,41 @@
+[33mcommit fbd94b877cf8786fb867d7f1e1810533f771623c[m[33m ([m[1;36mHEAD -> [m[1;32m5-project-root-env-var[m[33m)[m
+Author: CloudRiRi15 <rejoiceymucheri@gmail.com>
+Date:   Sat Sep 30 09:49:37 2023 +0000
+
+    provide example env for env var project root, provide good documentation about env vars
+
+[33mcommit 4cc0ad06208c0625d37f0658184fa62e4bb9cef2[m[33m ([m[1;33mtag: 0.2.0[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: CloudRiRi15 <106775978+CloudRiRi15@users.noreply.github.com>
+Date:   Sat Sep 30 00:39:36 2023 +0200
+
+    #3 refactor terraform cli into a bash script for gitpod.yml (#4)
+
+[33mcommit 73381d3957f45b36730ad6b34399a1c8da1d6b61[m
+Author: CloudRiRi15 <106775978+CloudRiRi15@users.noreply.github.com>
+Date:   Fri Sep 29 22:13:52 2023 +0200
+
+    1 add semantic versioning document to project (#2)
+    
+    * Add documentation for the semantic versioning
+    
+    * #1 add mage to semantic versioning
+
+[33mcommit 76e9287970861d216555737a589fd0a364762ae2[m
+Author: CloudRiRi15 <106775978+CloudRiRi15@users.noreply.github.com>
+Date:   Tue Sep 19 10:58:21 2023 +0200
+
+    Update main.tf
+    
+    Second change just testing
+
+[33mcommit 87db496a1ec4e142334289aa8eeaf7b95bbf3e5f[m
+Author: CloudRiRi15 <rejoiceymucheri@gmail.com>
+Date:   Tue Sep 19 08:56:11 2023 +0000
+
+    My first change
+
+[33mcommit 2c5f538d4288460058b4479286fb084fa00360fe[m
+Author: CloudRiRi15 <106775978+CloudRiRi15@users.noreply.github.com>
+Date:   Tue Sep 19 10:37:21 2023 +0200
+
+    Initial commit
