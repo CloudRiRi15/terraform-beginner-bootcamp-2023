@@ -244,7 +244,7 @@ If you loose this file, you lose knowing the state of your infrastructure.
 
 `.terraform` directory contains binaries of terraform providers.
 
-## Issues with terraform Cloud Login and Gitpod Workspaces
+## Issues with Terraform Cloud Login and Gitpod Workspaces
 
 When attempting to run `terraform login` it will launch a bash terminal in a weird looking window like an old xp gaming view to generate a token with some prompts to navigate that window. It does not work was expected in Gitpod VSCode in the browser.
 
@@ -270,6 +270,9 @@ Next you will provide the following code (ensure to replace the token in the fil
   }
 }    
 ```
+
+We found an easier way to workaround the Terraform Login issue we were having earlier. We automated the process by writing a bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
 
 
 
