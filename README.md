@@ -1,5 +1,13 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Contents
+
+- [Semantic Versioning](#semantic-versioning-mage) 
+- [Install the Terraform CLI](#install-the-terraform-cli)
+  - [Considerations for Linux Distribution](#considerations-for-linux-distribution)
+- []
+- []
+
 ## Semantic Versioning :mage:
 
 This project is going to utilise semantic versioning for its tagging.
@@ -272,6 +280,8 @@ Next you will provide the following code (ensure to replace the token in the fil
 ```
 
 We found an easier way to workaround the Terraform Login issue we were having earlier. We automated the process by writing a bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+https://developer.hashicorp.com/terraform/language/modules/develop/structure
 
 
 
