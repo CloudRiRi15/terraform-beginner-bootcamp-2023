@@ -1,11 +1,19 @@
 terraform {
-#  cloud {
-#    organization = "Cloud_RiRi-Terraform-beginner-Bootcamp"
-#
-#    workspaces {
-#      name = "Terra-house-riri"
-#    }
-#  }
+  #backend "remote" {
+  #  hostname = "app.terraform.io"
+  #  organization = "Cloud_RiRi-Terraform-beginner-Bootcamp"
+
+  #  workspaces {
+  #    name = "Terra-house-riri"
+  #  }
+  #}
+
+  cloud {
+    organization = "Cloud_RiRi-Terraform-beginner-Bootcamp"
+    workspaces {
+      name = "terraform-cloud"
+    }
+  }
 
 }  
 module "terrahouse_aws" {
