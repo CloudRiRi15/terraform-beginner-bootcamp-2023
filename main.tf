@@ -29,3 +29,17 @@ provider "terratowns" {
 #  error_html_filepath = var.error_html_filepath
 #  content_version = var.content_version
 #}
+
+resource "terratowns_home" "home" {
+  name = "How to play Arcanum in 2023!"
+  description = <<DESCRIPTION
+Forza Motorsport was released on May 3, 2005, and is the first installment in the Forza Motorsport series.
+It is the only title in the series to be released on the original Xbox console.It features 231 cars and 
+racetracks from 15 real-world and fictional locations. Here you get to witness the best of Forza Motorsport.
+with some of the fastest cars in action.
+DESCRIPTION
+  #domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = "3fdq3gz.cloudfront.net"
+  town = "gamers-grotto"
+  content_version = 1
+}
