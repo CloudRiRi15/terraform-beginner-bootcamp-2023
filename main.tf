@@ -5,14 +5,13 @@ terraform {
       version = "1.0.0"
     }
   }
-#  cloud {
-#    organization = "Cloud_RiRi-Terraform-beginner-Bootcamp"
-#
-#    workspaces {
-#      name = "Terra-house-riri"
-#    }
-#  }
+  cloud {
+    organization = "Cloud_RiRi-Terraform-beginner-Bootcamp"
 
+    workspaces {
+      name = "Terra-house-riri"
+    }
+  }
 } 
 
 provider "terratowns" {
@@ -20,13 +19,12 @@ provider "terratowns" {
   user_uuid = var.teacherseat_user_uuid
   token = var.terratowns_access_token
 }
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
-  assets_path = var.assets_path
+
+module "home_forza_hosting" {
+  source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version = var.content_version
+  public_path = var.forza.public_path
+  content_version = var.forza.content_version
 }
 
 resource "terratowns_home" "home" {
@@ -38,8 +36,26 @@ original Xbox console.It features 231 cars and racetracks from 15 real-world and
 fictional locations. Here you get to witness the best of Forza Motorsport
 with some of the fastest cars in action.
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
-  #domain_name = "3fhskn3.cloudfront.net"
+  domain_name = module.home_forza_hosting.domain_name
   town = "missingo"
-  content_version = 1
+  content_version = var.forza.content_version
+}
+
+module "home_marlicomworld_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.marlicomworld.public_path
+  content_version = var.marlicomworld.content_version
+}
+resource "terratowns_home" "home_marlicomworld" {
+  name = "marlicomWorld International bringing you alive with great music"
+  description = <<DESCRIPTION
+  Weather you are feeling happy or sad, excited or anxious. Maybe you dont even know what 
+  or how to feel anymore or you just numb. We got you. There is no easier way to get into 
+  your feels than through the wonderful world of Music. Sit back and enjoy the vibrations 
+  of amaing soul music or better yet put on your dancing shoes for some music funk. We got it All.
+DESCRIPTION
+  domain_name = module.home_marlicomworld_hosting.domain_name
+  town = "missingo"
+  content_version = var.marlicomworld.content_version
 }
